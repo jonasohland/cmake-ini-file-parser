@@ -15,35 +15,38 @@ set(INIFileParser_INSTALL_LOCATION      "lib/INIFileParser-${_ifp_version}")
 get_directory_property(_has_parent_scope PARENT_DIRECTORY)
 
 if(_has_parent_scope)
+
     set(INIFileParser_VERSION           "${_ifp_version}"       PARENT_SCOPE)
     set(INIFileParser_ModulePath        "${_ifp_module_path}"   PARENT_SCOPE)
     set(INIFileParser_Module            "${_ifp_module}"        PARENT_SCOPE)
+
 else()
+
     set(INIFileParser_VERSION           ${_ifp_version})
-endif()
+    include(CMakePackageConfigHelpers)
 
-include(CMakePackageConfigHelpers)
-
-configure_file(
-    "${INIFileParser_CONFIG_TEMPLATE}"
-    "${INIFileParser_CONFIG_FILE}"
-    @ONLY)
-
-write_basic_package_version_file(
-    ${INIFileParser_VERSION_FILE}
-    VERSION ${INIFileParser_VERSION}
-    COMPATIBILITY SameMajorVersion)
-
-install(
-    FILES 
+    configure_file(
+        "${INIFileParser_CONFIG_TEMPLATE}"
         "${INIFileParser_CONFIG_FILE}"
-        "${INIFileParser_VERSION_FILE}"
-    DESTINATION
-        "${INIFileParser_INSTALL_LOCATION}")
+        @ONLY)
 
-install(
-    FILES
-        "${_ifp_module}"
-    DESTINATION
-        "${INIFileParser_INSTALL_LOCATION}/cmake"
-)
+    write_basic_package_version_file(
+        ${INIFileParser_VERSION_FILE}
+        VERSION ${INIFileParser_VERSION}
+        COMPATIBILITY SameMajorVersion)
+
+    install(
+        FILES 
+            "${INIFileParser_CONFIG_FILE}"
+            "${INIFileParser_VERSION_FILE}"
+        DESTINATION
+            "${INIFileParser_INSTALL_LOCATION}")
+
+    install(
+        FILES
+            "${_ifp_module}"
+        DESTINATION
+            "${INIFileParser_INSTALL_LOCATION}/cmake"
+    )
+    
+endif()
