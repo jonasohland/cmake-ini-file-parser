@@ -5,7 +5,6 @@ set(INIFileParser_CONFIG_TEMPLATE       "${CMAKE_CURRENT_LIST_DIR}/templates/INI
 set(INIFileParser_CONFIG_FILE           "${CMAKE_CURRENT_BINARY_DIR}/INIFileParser-config.cmake")
 set(INIFileParser_VERSION_FILE          "${CMAKE_CURRENT_BINARY_DIR}/INIFileParser-version.cmake")
 
-
 set(_ifp_version                        0.0.1)
 set(_ifp_module_path                    "${CMAKE_CURRENT_LIST_DIR}/cmake")
 set(_ifp_module                         "${_ifp_module_path}/INIFileParser.cmake")
@@ -23,7 +22,7 @@ if(_has_parent_scope)
 else()
 
     set(INIFileParser_VERSION           ${_ifp_version})
-    
+
     include(CMakePackageConfigHelpers)
 
     configure_file(
