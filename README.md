@@ -10,7 +10,7 @@
 
 ### What is this?
 
-This is a CMake module that adds the function `parse_ini_file()` to your project. This function, when input the an INI-file
+This is a CMake module that adds the function `parse_ini_file(<PATH> <PREFIX>)` to your project. This function, when input the INI-file
 
 ```ini
 [system]
