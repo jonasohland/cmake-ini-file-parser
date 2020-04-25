@@ -494,8 +494,6 @@ function(parse_ini_file)
         "${parse_ini_file_options}" ";" 
         "${parse_ini_multival_keywords}")
 
-    message(STATUS "Parsing INI file ${ARGV0}")
-
     set(__FILE      ${ARGV0})
     set(__PREFIX    ${ARGV1})
 
@@ -511,10 +509,13 @@ function(parse_ini_file)
         _ini_cache_check(${__PREFIX} _cache_is_valid)
 
         if(_cache_is_valid)
+            message(STATUS "Cache for ${__FILE} is valid")
             return()
         endif()
 
     endif()
+
+    message(STATUS "Parsing ini file ${__FILE}")
 
     set(_ini_pss_find_sect      fs)
     set(_ini_pss_section        s) 
