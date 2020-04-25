@@ -23,6 +23,7 @@ if(_has_parent_scope)
 else()
 
     set(INIFileParser_VERSION           ${_ifp_version})
+    
     include(CMakePackageConfigHelpers)
 
     configure_file(
@@ -48,5 +49,5 @@ else()
         DESTINATION
             "${INIFileParser_INSTALL_LOCATION}/cmake"
     )
-    
+
 endif()
