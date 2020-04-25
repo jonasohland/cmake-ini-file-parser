@@ -434,8 +434,6 @@ function(_ini_cache_check _prefix _out_var)
         return()
     endif()
 
-    message(STATUS "Compare: ${_original_file} <-> ${_cached_file}")
-
     if("${_original_file}" IS_NEWER_THAN "${_cached_file}")
         set(${_out_var} OFF PARENT_SCOPE)
     else()
@@ -498,8 +496,6 @@ function(parse_ini_file)
     set(__PREFIX    ${ARGV1})
 
     if(NOT INI_NO_CACHE)
-
-        message(STATUS "Checking cache...")
 
         if((NOT INI_CACHE_SECTIONS) AND (NOT INI_CACHE_KEYS))
             set(_cache_all ON)
