@@ -25,15 +25,15 @@ aString = I am a String!
 will define the following variables in your scope
 
 ```
-<PREFIX>_SECTIONS							= system;other_stuff
+<PREFIX>_SECTIONS             = system;other_stuff
 
-<PREFIX>_system_KEYS					= cores;ram
-<PREFIX>_system_cores					= 16
-<PREFIX>_system_ram						= 32
+<PREFIX>_system_KEYS          = cores;ram
+<PREFIX>_system_cores         = 16
+<PREFIX>_system_ram           = 32
 
-<PREFIX>_other_stuff_KEYS			= number;aString
-<PREFIX>_other_stuff_number		= 13, 33, 66
-<PREFIX>_other_stuff_aString	= I am a String!
+<PREFIX>_other_stuff_KEYS     = number;aString
+<PREFIX>_other_stuff_number   = 13, 33, 66
+<PREFIX>_other_stuff_aString  = I am a String!
 ```
 
 
